@@ -20,6 +20,7 @@
 
     {% if error %}
         <p style="color: red">{{ error }}</p>
+        <p>Pulse <a href="{{ url_for('login') }}">aquí</a> para iniciar sesión</p>
 
     {% elif username%}
         <p style="color: limegreen">Usuario {{ username }} registrado correctamente. </p>

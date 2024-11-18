@@ -59,6 +59,15 @@ def add_film():
         users[username]['peliculas'].append(pelicula)
     return render_template('añadir_pelicula.html', username=session['username'])
 
+@app.route('/logout')
+def logout():
+    username = session.get('username')
+    if username in users:
+        del users[username]
+    session.pop('logged_in', None)
+    session.pop('username', None)
+    return render_template('logout.html', username=username)
+
 if __name__ == '__main__':
     app.run()
 

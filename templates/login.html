@@ -18,6 +18,8 @@
         <button class="btn btn-primary" type="submit">Enviar</button>
     </form>
 
+    <p>Pulse <a href="{{ url_for('register') }}">aquí </a>para registrar un usuario</p>
+
     {% if error %}
         <p style="color: red">{{ error }}</p>
     {% endif %}
