@@ -55,8 +55,17 @@ def add_film():
 
     if request.method == 'POST':
         pelicula = request.form['pelicula']
+        sinopsis = request.form['sinopsis']
+        puntuacion = request.form['puntuacion']
         username = session['username']
-        users[username]['peliculas'].append(pelicula)
+        nueva_pelicula = {
+            "pelicula": pelicula,
+            "sinopsis": sinopsis,
+            "puntuacion": puntuacion
+        }
+
+        users[username]['peliculas'].append(nueva_pelicula)
+
     return render_template('añadir_pelicula.html', username=session['username'])
 
 @app.route('/logout')

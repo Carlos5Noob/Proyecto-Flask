@@ -19,10 +19,15 @@
     <h3 class="text-center">Mis películas:</h3>
 
     {% if peliculas %}
-
-        {% for pelicula in peliculas %}
-            <p class="text-center">{{  pelicula }}</p>
-        {% endfor %}
+        <ul class="list-group">
+            {% for pelicula in peliculas %}
+                <li class="list-group-item">
+                    <h5>{{ pelicula['pelicula'] }}</h5>
+                    <p><strong>Sinopsis:</strong> {{ pelicula['sinopsis'] }}</p>
+                    <p><strong>Puntuación:</strong> {{ pelicula['puntuacion'] }}</p>
+                </li>
+            {% endfor %}
+        </ul>
     {% else %}
         <p class="text-center">No hay películas</p> <br>
     {% endif %}

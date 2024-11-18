@@ -12,6 +12,10 @@
     <form method="post" action="{{ url_for('add_film') }}">
         <label for="pelicula">Nombre pelicula:</label>
         <input type="text" id="pelicula" name="pelicula" required autofocus>
+        <label for="sinopsis">Sinopsis:</label>
+        <input type="text" id="sinopsis" name="sinopsis" required >
+        <label for="puntuacion">Puntuación:</label>
+        <input type="number" id="puntuacion" name="puntuacion" required >
         <button class="btn btn-primary" type="submit">Añadir</button>
     </form>
 
