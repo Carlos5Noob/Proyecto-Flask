@@ -10,7 +10,7 @@ users = {}
 def home():
     if 'logged_in' in session:
         username = session['username']
-        peliculas = users[username].get('peliculas')
+        peliculas = users[username].get('peliculas', [])
         return render_template('home.html', username=username, peliculas = peliculas)
     else:
         error = "No estás logeado. "
@@ -39,7 +39,7 @@ def login():
         username = request.form['usuario']
         password = request.form['password']
 
-        if users[username].get("password") == password:
+        if username in users and users[username].get("password") == password:
             session['logged_in'] = True
             session['username'] = username
             return redirect(url_for('home'))
