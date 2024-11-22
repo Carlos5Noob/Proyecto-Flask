@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <title>Iniciar sesión</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/styles.css" rel="stylesheet">
 </head>
 <body>
 
-    <h2>Iniciar sesión</h2>
+    <h2 class="keloke text-center">Iniciar sesión</h2>
 
-    <form method="post", action="{{url_for('login')}}">
+    <form class="text-center" method="post", action="{{url_for('login')}}">
         <label for="usuario">Usuario:</label>
         <input type="text" id="usuario" name="usuario" required autofocus>
         <br>
         <label for="password">Contraseña:</label>
         <input type="password", id="password", name="password" required>
+        <br>
         <button class="btn btn-primary" type="submit">Enviar</button>
     </form>
 
-    <p>Pulse <a href="{{ url_for('register') }}">aquí </a>para registrar un usuario</p>
+    <p class="text-center">Pulse <a href="{{ url_for('register') }}">aquí </a>para registrar un usuario</p>
 
     {% if error %}
-        <p style="color: red">{{ error }}</p>
+        <p class="text-center" style="color: red">{{ error }}</p>
     {% endif %}
 
 </body>
