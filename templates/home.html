@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
 
@@ -25,6 +26,10 @@
                     <h5>{{ pelicula['pelicula'] }}</h5>
                     <p><strong>Sinopsis:</strong> {{ pelicula['sinopsis'] }}</p>
                     <p><strong>Puntuación:</strong> {{ pelicula['puntuacion'] }}</p>
+                    <p><strong>Género:</strong> {{ pelicula['genero'] }}</p>
+                    <p><strong>Fecha de estreno:</strong> {{ pelicula['fecha'] }}</p>
+                    <p><strong>Número de capítulos:</strong> {{ pelicula['capitulos'] }}</p>
+                    <p><strong>Duración de capítulos:</strong> {{ pelicula['duracion'] }}</p>
                 </li>
             {% endfor %}
         </ul>

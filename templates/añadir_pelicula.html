@@ -12,10 +12,29 @@
     <form method="post" action="{{ url_for('add_film') }}">
         <label for="pelicula">Nombre pelicula:</label>
         <input type="text" id="pelicula" name="pelicula" required autofocus>
+        <br>
         <label for="sinopsis">Sinopsis:</label>
         <input type="text" id="sinopsis" name="sinopsis" required >
+        <br>
         <label for="puntuacion">Puntuación:</label>
         <input type="number" id="puntuacion" name="puntuacion" required >
+        <br>
+        <label for="genero">Género:</label>
+        <select name="genero" id="genero">
+            <option value="terror">Terror</option>
+            <option value="lucha y acción">Lucha y acción</option>
+            <option value="comedia">Comedia</option>
+        </select>
+        <br>
+        <label for="fecha">Fecha de estreno:</label>
+        <input type="date" id="fecha" name="fecha" required>
+        <br>
+        <label for="capitulos">Número de capítulos:</label>
+        <input type="number" id="capitulos" name="capitulos" required>
+        <br>
+        <label for="duracion">Duración:</label>
+        <input type="number" id="duracion" name="duracion">
+
         <button class="btn btn-primary" type="submit">Añadir</button>
     </form>
 

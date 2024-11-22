@@ -57,11 +57,19 @@ def add_film():
         pelicula = request.form['pelicula']
         sinopsis = request.form['sinopsis']
         puntuacion = request.form['puntuacion']
+        genero = request.form['genero']
+        fecha = request.form['fecha']
+        capitulos = request.form['capitulos']
+        duracion = request.form['duracion']
         username = session['username']
         nueva_pelicula = {
             "pelicula": pelicula,
             "sinopsis": sinopsis,
-            "puntuacion": puntuacion
+            "puntuacion": puntuacion,
+            "genero": genero,
+            "fecha": fecha,
+            "capitulos": capitulos,
+            "duracion": duracion
         }
 
         users[username]['peliculas'].append(nueva_pelicula)
