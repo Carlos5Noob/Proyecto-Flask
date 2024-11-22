@@ -16,30 +16,69 @@
 
 {% else %}
 
-    <h2 class="text-center">Bienvenido, {{ username }}. </h2> <br>
+    <h2 class="text-center">Bienvenido, {{ username | capitalize }}. </h2> <br>
     <h3 class="text-center">Mis películas:</h3>
 
     {% if peliculas %}
+
         <ul class="list-group">
+            <h4><strong>Por ver:</strong></h4>
             {% for pelicula in peliculas %}
-                <li class="list-group-item">
-                    <h5>{{ pelicula['pelicula'] }}</h5>
-                    <p><strong>Sinopsis:</strong> {{ pelicula['sinopsis'] }}</p>
-                    <p><strong>Puntuación:</strong> {{ pelicula['puntuacion'] }}</p>
-                    <p><strong>Género:</strong> {{ pelicula['genero'] }}</p>
-                    <p><strong>Fecha de estreno:</strong> {{ pelicula['fecha'] }}</p>
-                    <p><strong>Número de capítulos:</strong> {{ pelicula['capitulos'] }}</p>
-                    <p><strong>Duración de capítulos:</strong> {{ pelicula['duracion'] }}</p>
-                </li>
+                {% if pelicula['categoria'] == 'por_ver' %}
+                    <li class="list-group-item">
+                        <h5>{{ pelicula['pelicula'] }}</h5>
+                        <p><strong>Sinopsis:</strong> {{ pelicula['sinopsis'] }}</p>
+                        <p><strong>Puntuación:</strong> {{ pelicula['puntuacion'] }}</p>
+                        <p><strong>Género:</strong> {{ pelicula['genero'] }}</p>
+                        <p><strong>Fecha de estreno:</strong> {{ pelicula['fecha'] }}</p>
+                        <p><strong>Número de capítulos:</strong> {{ pelicula['capitulos'] }}</p>
+                        <p><strong>Duración de capítulos:</strong> {{ pelicula['duracion'] }}</p>
+                    </li>
+                {% endif %}
             {% endfor %}
         </ul>
+
+        <ul class="list-group">
+            <h4><strong>Viendo:</strong></h4>
+            {% for pelicula in peliculas %}
+                {% if pelicula['categoria'] == 'viendo' %}
+                    <li class="list-group-item">
+                        <h5>{{ pelicula['pelicula'] }}</h5>
+                        <p><strong>Sinopsis:</strong> {{ pelicula['sinopsis'] }}</p>
+                        <p><strong>Puntuación:</strong> {{ pelicula['puntuacion'] }}</p>
+                        <p><strong>Género:</strong> {{ pelicula['genero'] }}</p>
+                        <p><strong>Fecha de estreno:</strong> {{ pelicula['fecha'] }}</p>
+                        <p><strong>Número de capítulos:</strong> {{ pelicula['capitulos'] }}</p>
+                        <p><strong>Duración de capítulos:</strong> {{ pelicula['duracion'] }}</p>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <ul class="list-group">
+            <h4><strong>Vistas:</strong></h4>
+            {% for pelicula in peliculas %}
+                {% if pelicula['categoria'] == 'vistas' %}
+                    <li class="list-group-item">
+                        <h5>{{ pelicula['pelicula'] }}</h5>
+                        <p><strong>Sinopsis:</strong> {{ pelicula['sinopsis'] }}</p>
+                        <p><strong>Puntuación:</strong> {{ pelicula['puntuacion'] }}</p>
+                        <p><strong>Género:</strong> {{ pelicula['genero'] }}</p>
+                        <p><strong>Fecha de estreno:</strong> {{ pelicula['fecha'] }}</p>
+                        <p><strong>Número de capítulos:</strong> {{ pelicula['capitulos'] }}</p>
+                        <p><strong>Duración de capítulos:</strong> {{ pelicula['duracion'] }}</p>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
     {% else %}
         <p class="text-center">No hay películas</p> <br>
     {% endif %}
 
     <p class="text-center">Pulse <a href="{{ url_for('add_film') }}">aquí</a> para añadir películas al usuario {{ username }}</p>
     <br>
-    <p class="text-center">Haz <a class="text-center" href="{{ url_for('login') }}"> click </a> aquí para iniciar sesión. </p>
+    <p class="text-center">Haz <a class="text-center" href="{{ url_for('login') }}"> click </a> aquí para iniciar sesión con otro usuario. </p>
     <br>
     <p class="text-center">Haz  <a  href="{{ url_for('register') }}"> click </a> aquí para registrar otro usuario. </p>
     <br>
