@@ -8,6 +8,11 @@ users = {}
 
 @app.route('/')
 def home():
+    """
+    Home page of the website
+    :return: main html template
+    """
+
     if 'logged_in' in session:
         username = session['username']
         peliculas = users[username].get('peliculas', [])
@@ -18,6 +23,11 @@ def home():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    """
+    register page of the website
+    :return:
+    """
+
     if request.method == 'POST':
         username = request.form['usuario']
         password = request.form['password']
@@ -35,6 +45,11 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """
+    login page of the website
+    :return:
+    """
+
     if request.method == 'POST':
         username = request.form['usuario']
         password = request.form['password']
@@ -50,6 +65,11 @@ def login():
 
 @app.route('/añadir-peliculas', methods=['GET', 'POST'])
 def add_film():
+    """
+    Page of the website to add film to a user
+    :return:
+    """
+
     if 'logged_in' not in session:
         return redirect(url_for('login'))
 
@@ -81,6 +101,11 @@ def add_film():
 
 @app.route('/logout')
 def logout():
+    """
+    page to do logout
+    :return:
+    """
+
     username = session.get('username')
     if username in users:
         del users[username]
