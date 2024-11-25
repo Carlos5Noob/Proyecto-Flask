@@ -8,17 +8,20 @@
 </head>
 <body>
 
-    <h2 class="keloke text-center">Registrar usuario</h2>
-
-    <form class="text-center" method="post", action="{{url_for('register')}}">
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" required autofocus>
-        <br>
-        <label for="password">Contraseña:</label>
-        <input type="password", id="password", name="password" required>
-        <br>
-        <button class="btn btn-primary" type="submit">Enviar</button>
-    </form>
+    <div class="d-flex justify-content-center mt-5">
+    <fieldset class="border rounded p-3 shadow">
+        <legend class="text-center">Registrar usuario</legend>
+        <form class="text-center" method="post", action="{{url_for('register')}}">
+            <label class="form-label" for="usuario">Usuario:</label>
+            <input class="form-control w-auto mx-auto d-block" type="text" id="usuario" name="usuario" required autofocus>
+            <br>
+            <label class="form-label" for="password">Contraseña:</label>
+            <input class="form-control w-auto mx-auto d-block" type="password" id="password" name="password" required>
+            <br>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+    </fieldset>
+    </div>
 
     {% if error %}
         <p class="text-center" style="color: red">{{ error }}</p>

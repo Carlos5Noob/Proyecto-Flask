@@ -8,43 +8,46 @@
 </head>
 <body>
 
-    <h1 class="keloke text-center">Añadir películas al usuario {{ username }}</h1>
-
-    <form class="text-center" method="post" action="{{ url_for('add_film') }}">
-        <label for="pelicula">Nombre pelicula:</label>
-        <input type="text" id="pelicula" name="pelicula" required autofocus>
-        <br>
-        <label for="sinopsis">Sinopsis:</label>
-        <input type="text" id="sinopsis" name="sinopsis" required >
-        <br>
-        <label for="puntuacion">Puntuación:</label>
-        <input type="number" id="puntuacion" name="puntuacion" required >
-        <br>
-        <label for="genero">Género:</label>
-        <select name="genero" id="genero">
-            <option value="terror">Terror</option>
-            <option value="lucha y acción">Lucha y acción</option>
-            <option value="comedia">Comedia</option>
-        </select>
-        <br>
-        <label for="fecha">Fecha de estreno:</label>
-        <input type="date" id="fecha" name="fecha" required>
-        <br>
-        <label for="capitulos">Número de capítulos:</label>
-        <input type="number" id="capitulos" name="capitulos" required>
-        <br>
-        <label for="duracion">Duración:</label>
-        <input type="number" id="duracion" name="duracion">
-        <br>
-        <label for="categoria">Categoría:</label>
-        <select name="categoria" id="categoria">
-            <option value="por_ver">Por ver</option>
-            <option value="viendo">Viendo</option>
-            <option value="vistas">Vistas</option>
-        </select>
-        <br>
-        <button class="btn btn-primary" type="submit">Añadir</button>
-    </form>
+    <div class="d-flex justify-content-center mt-5">
+    <fieldset class="border rounded p-3 shadow">
+        <legend class="text-center">Añadir películas al usuario {{ username | capitalize }}</legend>
+            <form class="text-center" method="post" action="{{ url_for('add_film') }}">
+                <label class="form-label" for="pelicula">Nombre pelicula:</label>
+                <input class="form-control w-auto mx-auto d-block" type="text" id="pelicula" name="pelicula" required autofocus>
+                <br>
+                <label class="form-label" for="sinopsis">Sinopsis:</label>
+                <input class="form-control w-auto mx-auto d-block" type="text" id="sinopsis" name="sinopsis" required >
+                <br>
+                <label class="form-label" for="puntuacion">Puntuación:</label>
+                <input class="form-control w-auto mx-auto d-block" type="number" id="puntuacion" name="puntuacion" required >
+                <br>
+                <label class="form-label" for="genero">Género:</label>
+                <select class="form-select w-auto mx-auto d-block" name="genero" id="genero">
+                    <option value="terror">Terror</option>
+                    <option value="lucha y acción">Lucha y acción</option>
+                    <option value="comedia">Comedia</option>
+                </select>
+                <br>
+                <label class="form-label" for="fecha">Fecha de estreno:</label>
+                <input class="form-control w-auto mx-auto d-block" type="date" id="fecha" name="fecha" required>
+                <br>
+                <label class="form-label" for="capitulos">Número de capítulos:</label>
+                <input class="form-control w-auto mx-auto d-block" type="number" id="capitulos" name="capitulos" required>
+                <br>
+                <label class="form-label" for="duracion">Duración:</label>
+                <input class="form-control w-auto mx-auto d-block" type="number" id="duracion" name="duracion">
+                <br>
+                <label class="form-label" for="categoria">Categoría:</label>
+                <select class="form-select w-auto mx-auto d-block" name="categoria" id="categoria">
+                    <option value="por_ver">Por ver</option>
+                    <option value="viendo">Viendo</option>
+                    <option value="vistas">Vistas</option>
+                </select>
+                <br>
+                <button class="btn btn-primary" type="submit">Añadir</button>
+            </form>
+    </fieldset>
+    </div>
 
     <p class="text-center">Haz click <a href="{{ url_for('home') }}">aquí</a> para volver a la página principal</p>
 
