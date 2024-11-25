@@ -12,7 +12,9 @@
 
 {% if error %}
     <p class="text-center" style="color: red"> {{ error }} </p>
-    <p class="text-center">Click<a href="{{ url_for('register') }}"> aquí </a> para registrarte</p>
+    <div class="d-flex justify-content-center mt-3">
+        <button onclick="redirigir('register')" type="button" class="btn btn-secondary">Pulsa aquí para registrarte</button>
+    </div>
 
 {% else %}
 
@@ -76,15 +78,32 @@
         <p class="text-center">No hay películas</p> <br>
     {% endif %}
 
-    <p class="text-center">Pulse <a href="{{ url_for('add_film') }}">aquí</a> para añadir películas al usuario {{ username }}</p>
+    <div class="d-flex justify-content-center mt-3">
+        <button onclick="redirigir('añadir-peliculas')" type="button" class="btn btn-secondary">Pulsa aquí para añadir peliculas al usuario {{ username | capitalize }}</button>
+    </div>
     <br>
-    <p class="text-center">Haz <a class="text-center" href="{{ url_for('login') }}"> click </a> aquí para iniciar sesión con otro usuario. </p>
+    <div class="d-flex justify-content-center mt-3">
+        <button onclick="redirigir('login')" type="button" class="btn btn-secondary">Pulsa aquí para iniciar sesión con otro usuario</button>
+    </div>
     <br>
-    <p class="text-center">Haz  <a  href="{{ url_for('register') }}"> click </a> aquí para registrar otro usuario. </p>
+    <div class="d-flex justify-content-center mt-3">
+        <button onclick="redirigir('register')" type="button" class="btn btn-secondary">Pulsa aquí para registrar otro usuario</button>
+    </div>
     <br>
-    <p class="text-center">Pulse <a href="{{ url_for('logout') }}">aquí</a> para eliminar al usuario</p>
+    <div class="d-flex justify-content-center mt-3">
+        <button onclick="redirigir('logout')" type="button" class="btn btn-secondary">Pulsa aquí para eliminar al usuario {{ username | capitalize }}</button>
+    </div>
 
 {%  endif %}
+
+<script>
+        function redirigir(url) {
+
+
+    window.location.href=url;
+
+}
+    </script>
 
 </body>
 </html>

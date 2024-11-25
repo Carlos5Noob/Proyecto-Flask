@@ -8,7 +8,18 @@
 
     <h2>Se ha eliminado al usuario {{ username }}</h2>
 
-    <p>Haz click <a href="{{ url_for('login') }}">aquí</a> para volver a la página de inicio de sesión</p>
+    <div class="d-flex justify-content-center mt-3">
+        <button onclick="redirigir('login')" type="button" class="btn btn-secondary">Pulsa aquí para volver a la página de inicio de sesión</button>
+    </div>
+
+    <script>
+        function redirigir(url) {
+
+
+    window.location.href=url;
+
+}
+    </script>
 
 </body>
 </html>

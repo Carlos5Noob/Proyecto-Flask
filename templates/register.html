@@ -25,12 +25,25 @@
 
     {% if error %}
         <p class="text-center" style="color: red">{{ error }}</p>
-        <p class="text-center">Pulse <a href="{{ url_for('login') }}">aquí</a> para iniciar sesión</p>
+        <div class="d-flex justify-content-center mt-3">
+            <button onclick="redirigir('login')" type="button" class="btn btn-secondary">Pulsa aquí para iniciar sesión</button>
+        </div>
 
     {% elif username%}
         <p class="text-center" style="color: green">Usuario {{ username }} registrado correctamente. </p>
-        <p class="text-center">Pulse <a href="{{ url_for('login') }}">aquí</a> para iniciar sesión</p>
+        <div class="d-flex justify-content-center mt-3">
+            <button onclick="redirigir('login')" type="button" class="btn btn-secondary">Pulsa aquí para iniciar sesión</button>
+        </div>
     {% endif %}
+
+    <script>
+        function redirigir(url) {
+
+
+    window.location.href=url;
+
+}
+    </script>
 
 </body>
 </html>

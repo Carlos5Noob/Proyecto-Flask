@@ -23,11 +23,22 @@
         </fieldset>
     </div>
 
-    <p class="text-center">Pulse <a href="{{ url_for('register') }}">aquí </a>para registrar un usuario</p>
+    <div class="d-flex justify-content-center mt-3">
+        <button onclick="redirigir('register')" type="button" class="btn btn-secondary">Pulsa aquí para registrar un nuevo usuario</button>
+    </div>
 
     {% if error %}
         <p class="text-center" style="color: red">{{ error }}</p>
     {% endif %}
+
+     <script>
+        function redirigir(url) {
+
+
+    window.location.href=url;
+
+}
+    </script>
 
 </body>
 </html>
