@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 app = Flask(__name__)
 
 app.secret_key = "keloke"
-users = {}
+users = {} # diccionario donde se van a almacenar los datos de los usuarios que se registran en la página. Simula una base de datos
 
 
 @app.route('/')
